@@ -14,6 +14,7 @@
 
 
 
-[Uploading nnn.drawio…]()
+![image](https://github.com/Almaz102rus/demo2024/assets/148868440/9dad653a-de60-46b6-985c-d11ba34fbe8e)
+
 
 
