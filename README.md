@@ -14,7 +14,8 @@
 
 
 
-![image](https://github.com/Almaz102rus/demo2024/assets/148868440/9dad653a-de60-46b6-985c-d11ba34fbe8e)
+![image](https://github.com/Almaz102rus/demo2024/assets/148868440/19f4d566-bce0-4ac9-a125-90f081d81538)
+
 
 
 
