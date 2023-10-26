@@ -32,8 +32,19 @@ netmask 255.255.255.128
 Данные действия проделываю и в других виртуальных машинах.
 
 #### №1.2
-Установка пакета frr:
-systemctl status frr
+Делаю установку пакета FRR.
+Для этого необходимо войти в конфигурацию /etc/sysctl.conf и доавбить строку net.ipv4.ip_forward=1
+Для применения изменений без перезагрузки использую команду:
+sysctl -p
+Влкючаю NAT командой:
+iptables -A POSTROUTING -t nat -j MASQUERADE
+Ввожу nato /etc/network/if-pre-up.d/ для создания файла "nat" и в него ввожу следующие строки:
+#!/bin/sh
+/sbin/iptables -A POSTROUTNIG -t nat -j MASQUERADE
+Осталось сделать файл запускаемым: 
+chmod +x /etc/network/if-pre-up.d/nat
+
+
 
 
 
