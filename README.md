@@ -1,7 +1,7 @@
 
                               Топология сети
                               
-     ![image](https://github.com/Almaz102rus/demo2024/assets/148868440/19f4d566-bce0-4ac9-a125-90f081d81538)
+![image](https://github.com/Almaz102rus/demo2024/assets/148868440/19f4d566-bce0-4ac9-a125-90f081d81538)
 
 
                    Таблица разбиения сети на подсети
