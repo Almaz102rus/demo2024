@@ -150,7 +150,7 @@ sh ip ospf neighbor
 apt update
 apt install isc-dhcp-server
 ```
-Конфиг:
+Config:
 ```
 nano /etc/default/isc-dhcp-server
 ```
