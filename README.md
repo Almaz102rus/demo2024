@@ -130,6 +130,7 @@ do sh int br
 conf t
 router ospf
 ```
+
 ```
 192.168.0.0/25 area 0
 192.168.0.164/30 area 0
