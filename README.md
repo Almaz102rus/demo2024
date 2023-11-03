@@ -64,11 +64,31 @@ address 192.168.0.166
 netmask 255.255.255.252
 gateway 192.168.0.165
 ```
+HQ-SRV
+```
+auto ens192
+iface ens192 inet static
+address 192.168.0.2
+netmask 255.255.255.128
+gateway 192.168.0.1
+```
+ISP
+```
+auto ens192
+iface ens192 inet dhcp
 
+auto ens224
+iface ens192 inet static
+address 192.168.0.162
+netmask 255.255.255.252
+
+auto ens256
+iface ens192 inet static
+address 192.168.0.165
+netmask 255.255.255.252
+```
 Сохраняю конфигурацию: CTRL+S
 Выхожу из конфигурации: CTRL+X
-
-Данные действия проделываю и в других виртуальных машинах.
 
 #### №1.2
 ##Описание задания:
