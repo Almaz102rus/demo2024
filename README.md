@@ -126,16 +126,16 @@ systemctl restart frr
 ```
 do sh int br
 ```
+```
 conf t
+router ospf
+```
+```
+192.168.0.0/25 area 0
+192.168.0.164/30 area 0
+```
+```
+sh ip ospf neighbor
 ```
 ![image](https://github.com/Almaz102rus/demo2024/assets/148868440/671682e1-e140-474b-b623-251e2a2c33fc)
-
-
-
-
-
-
-
-
-
 
