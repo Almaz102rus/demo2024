@@ -141,7 +141,7 @@ sh ip ospf neighbor
 ```
 ![image](https://github.com/Almaz102rus/demo2024/assets/148868440/671682e1-e140-474b-b623-251e2a2c33fc)
 
-#### №1.3 DHCP Сервер
+#### №1.3 DHCP Сервер на HQ-R
 ##Описание задания:
 1.3 Настройте автоматическое распределение IP-адресов на роутере HQ-R.
 1.3.1 Учтите, что у сервера должен быть зарезервирован адрес.
@@ -162,9 +162,14 @@ INTERFACESV4="ens192"
 ```
 nano /etc/dhcp/dhpcd.conf
 
-subnet
-range
-
-
+subnet 192.168.0.0 255.255.255.128
+range 192.168.0.2 192.168.0.125
+option domain-name-servers 8.8.8.8 8.8.4.4
+option routers 192.168.0.1
+```
+Для применения изменнений:
+```
+systemctl restart isc-dhcp-server.service
+```
 
 
