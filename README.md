@@ -30,7 +30,7 @@ e. Пул адресов для сети офиса HQ - не более 64. Д�
 
 Я ввел команду для просмотра конфигурации IP адресов: nano /etc/network/interfaces
 Далее, добавил необходимые IP в соотвествии с таблицей.
-###BR-R
+BR-R
 ```
 auto ens192
 iface ens192 inet static
@@ -42,6 +42,27 @@ iface ens224 inet static
 address 192.168.0.161
 netmask 255.255.255.252
 gateway 192.168.0.162
+```
+BR-SRV
+```
+auto ens192
+iface ens192 inet static
+address 192.168.0.130
+netmask 255.255.255.224
+gateway 192.168.0.129
+```
+HQ-R
+```
+auto ens192
+iface ens192 inet static
+address 192.168.0.1
+netmask 255.255.255.128
+
+auto ens224
+iface ens224 inet static
+address 192.168.0.166
+netmask 255.255.255.252
+gateway 192.168.0.165
 ```
 
 Сохраняю конфигурацию: CTRL+S
