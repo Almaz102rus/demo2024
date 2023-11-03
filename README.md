@@ -94,7 +94,7 @@ netmask 255.255.255.252
 ##Описание задания:
 1.2 Настройте внутреннюю динамическую маршрутизацию по средствам FRR. Выберите и обоснуйте выбор протокола динамической маршрутизации из расчёта, что в дальнейшем сеть будет масштабироваться.
 1.2.1 Составьте топологию сети L3.
-
+## NAT(ISP, HQ-R, BR-R)
 Делаю установку пакета FRR.
 Для этого необходимо войти в конфигурацию /etc/sysctl.conf и добавить строку net.ipv4.ip_forward=1
 Для применения изменений без перезагрузки использую команду:
@@ -111,6 +111,23 @@ iptables -A POSTROUTING -t nat -j MASQUERADE
 Осталось сделать файл запускаемым: 
 chmod +x /etc/network/if-pre-up.d/nat
 
+## FRR OSPF(ISP, HQ-R, BR-R)
+Делаю установку FRR 
+```
+apt update
+apt install frr
+```
+nano /etc/frr/daemons
+Нахожу строку ospfd=no и меняю его на ospfd=yes
+```
+systemctl restart frr
+```
+Для входа в среду роутера, ввожу ```vtysh```
+```
+do sh int br
+```
+conf t
+```
 ![image](https://github.com/Almaz102rus/demo2024/assets/148868440/671682e1-e140-474b-b623-251e2a2c33fc)
 
 
