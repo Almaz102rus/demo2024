@@ -178,10 +178,20 @@ option routers 192.168.0.1;}
 systemctl restart isc-dhcp-server.service
 ```
 #### №1.4 Создание пользователей 
-Задание: Настройте локальные учётные записи на всех устрйоствах в соответствии с таблицей.
+Описание задания: Настройте локальные учётные записи на всех устройствах в соответствии с таблицей.
 |Учётная запись|Пароль|Примечание|
 |:-:|:-:|:-:|
 |Admin|P@ssw0rd|CLI, HQ-SRV|
 |Branch admin|P@ssw0rd|BR-SRV, BR-R|
 |Network admin|P@ssw0rd|HQ-R, BR-R, HQ-SRV|
+Admin на CLI и HQ-SRV:
+```
+adduser admin
+P@ssw0rd
+usermod -aG sudo admin
+```
+Branch admin на BR-SRV и BR-R:
+```
+adduser Branch admin
+
 
