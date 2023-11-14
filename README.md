@@ -205,5 +205,12 @@ P@ssw0rd
 ```
 getent group sudo
 ```
-
-
+#### №1.5 iperf3
+На HQ-R и ISP вводим:
+```
+apt install iperf3
+```
+И на ISP:
+```
+iperf3 -s -p 6869
+```
