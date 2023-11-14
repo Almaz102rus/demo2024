@@ -184,6 +184,7 @@ systemctl restart isc-dhcp-server.service
 |Admin|P@ssw0rd|CLI, HQ-SRV|
 |Branch admin|P@ssw0rd|BR-SRV, BR-R|
 |Network admin|P@ssw0rd|HQ-R, BR-R, HQ-SRV|
+
 Admin на CLI и HQ-SRV:
 ```
 adduser admin
