@@ -193,6 +193,17 @@ usermod -aG sudo admin
 ```
 Branch admin на BR-SRV и BR-R:
 ```
-adduser Branch admin
+adduser branch
+P@ssw0rd
+```
+Network admin на HQ-R, BR-R и HQ-SRV:
+```
+adduser network
+P@ssw0rd
+```
+Для проверки созданных пользователей:
+```
+getent group sudo
+```
 
 
