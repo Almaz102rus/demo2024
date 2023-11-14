@@ -109,22 +109,22 @@ sysctl -p
 ```
 iptables -A POSTROUTING -t nat -j MASQUERADE
 ```
-Ввожу nato /etc/network/if-pre-up.d/ для создания файла "nat" и ввожу следующие строки:
+Ввожу ` nato /etc/network/if-pre-up.d/ ` для создания файла ` nat ` и ввожу следующие строки:
 ```
 #!/bin/sh
 /sbin/iptables -A POSTROUTNIG -t nat -j MASQUERADE
 ```
 Осталось сделать файл запускаемым: 
-chmod +x /etc/network/if-pre-up.d/nat
+` chmod +x /etc/network/if-pre-up.d/nat ` 
 
 ## FRR OSPF(ISP, HQ-R, BR-R)
-Делаю установку FRR 
+Делаю установку FRR: 
 ```
 apt update
 apt install frr
 ```
 nano /etc/frr/daemons
-Нахожу строку ospfd=no и меняю его на ospfd=yes
+Нахожу строку `ospfd=no` и меняю его на `ospfd=yes`:
 ```
 systemctl restart frr
 ```
