@@ -214,3 +214,33 @@ apt install iperf3
 ```
 iperf3 -s -p 6869
 ```
+#### №1.6 Rsync бэкап конфигов
+Для установки Rsync на HQ-R и BR-R:
+```
+apt install rsync 
+```
+Создание директории в виртуальных машинах:
+```
+mkdir /etc/networkbackup
+```
+Установка скрипта crontab -e:
+```
+0 0 * * * rsync -avzh /etc/frr/frr.conf /etc/networkbackup
+```
+Проверить скрипт: 
+```
+40 15 * * * rsync -avzh /etc/frr/frr.conf /etc/networkbackup
+```
+Вход в конфу frr:
+```
+ls /etc/networkbackup/frr.conf
+```
+```
+frr version 8.4.4
+frr defaults tradirional
+hostname HQ-R
+log syslog informational
+no ipv6 forwarding
+service intergrated-vtysh-config
+!
+
