@@ -212,7 +212,7 @@ apt install iperf3
 ```
 И на ISP:
 ```
-iperf3 -s -p 6869
+iperf3 -s -p 5201
 ```
 #### №1.6 Rsync бэкап конфигов
 Для установки Rsync на HQ-R и BR-R:
