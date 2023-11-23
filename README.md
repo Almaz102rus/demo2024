@@ -238,23 +238,19 @@ crontab -e
 Установка скрипта crontab -e в каталоге nano:
 ```
 0 0 * * * rsync -avzh /etc/frr/frr.conf /etc/networkbackup
+ч. мин.(date) 
 ```
 Проверить скрипт: 
 ```
 40 15 * * * rsync -avzh /etc/frr/frr.conf /etc/networkbackup
 ```
-Вход в конфу frr:
+Для проверки скрипта:
 ```
-ls /etc/networkbackup/frr.conf
+cd /etc/networkbackup
 ```
+Вводим `ls -a` и должны увидеть следующее:
 ```
-frr version 8.4.4
-frr defaults tradirional
-hostname HQ-R
-log syslog informational
-no ipv6 forwarding
-service intergrated-vtysh-config
-!
+. .. frr.conf
 ```
 
 
