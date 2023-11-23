@@ -206,24 +206,36 @@ P@ssw0rd
 getent group sudo
 ```
 #### №1.5 iperf3
-На HQ-R и ISP вводим:
+На HQ-SRV и BR-SRV устанаваливаем утилиту:
 ```
 apt install iperf3
 ```
-И на ISP:
+На BR-SRV, которое будет выполнять роль сервера, вводим:
+```
+iperf3 -s
+```
+Для назаначения порта по умолчанию:
 ```
 iperf3 -s -p 5201
 ```
-#### №1.6 Rsync бэкап конфигов
-Для установки Rsync на HQ-R и BR-R:
+На HQ-SRV, который является клиентом сервера, вводим IP-адрес сервера с портом
 ```
-apt install rsync 
+iperf3 -c 192.168.0.129 -p 5201
+```
+#### №1.6 Rsync бэкап конфигов
+Для установки Rsync утилиты на HQ-R и BR-R:
+```
+apt install rsync -y
 ```
 Создание директории в виртуальных машинах:
 ```
 mkdir /etc/networkbackup
 ```
-Установка скрипта crontab -e:
+Входим в каталог crontab:
+```
+crontab -e
+```
+Установка скрипта crontab -e в каталоге nano:
 ```
 0 0 * * * rsync -avzh /etc/frr/frr.conf /etc/networkbackup
 ```
